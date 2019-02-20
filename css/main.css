@@ -99,6 +99,12 @@ header .social-media img {
   margin-right: 10px;
 }
 
+@media (max-width: 767px) {
+  header .social-media img {
+    width: 25px;
+  }
+}
+
 header .social-media img:hover {
   border-radius: 50%;
 }
@@ -128,6 +134,12 @@ header .social-media img.w-app:hover {
 }
 
 /* end header */
+/* start navbar */
+.menu {
+  direction: rtl;
+}
+
+/* end navbar */
 /* start about */
 .about {
   direction: rtl;
@@ -191,25 +203,73 @@ header .social-media img.w-app:hover {
 /* start contact-us*/
 .contact-us {
   background-color: #4d9cc9;
-  border-bottom: 3px solid #ffffff;
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
+  border-bottom: 5px solid #ffffff;
+  border-top: 5px solid #171c1e;
+  border-left: 1px solid #171c1e;
+  border-right: 1px solid #171c1e;
   padding: 20px 0;
   padding-top: 50px;
   position: relative;
 }
 
 .contact-us::before {
-  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
   content: '';
-  width: 40px;
-  height: 40px;
-  background-color: red;
-  top: 0;
   position: absolute;
-  right: 50%;
-  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  top: -7.6%;
+  right: 48.39%;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  border-right: 5px solid #171c1e;
+  border-top: 5px solid #171c1e;
+}
+
+@media (max-width: 840px) {
+  .contact-us::before {
+    top: -7.5%;
+    right: 47.39%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-us::before {
+    top: -3.5%;
+  }
+}
+
+.contact-us::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #4d9cc9;
+  top: -5.6%;
+  margin-right: 3px;
+  right: 49%;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+@media (max-width: 991px) {
+  .contact-us::after {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 840px) {
+  .contact-us::after {
+    top: -5.5%;
+    right: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-us::after {
+    top: -2.5%;
+    margin-right: 7px;
+  }
 }
 
 .contact-us .share {
