@@ -153,8 +153,17 @@ header {
 }
 /* end header */
 
-/* start navbar */
-.menu {
+/* start nav */
+.navbar{
+    direction: rtl;
+    background-image: url('../imgs/nav1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* end nav */
+
+/* start slider */
+.slider {
     direction: rtl;
     border: 2px solid $grayColor;
     border-bottom: none; 
@@ -168,7 +177,9 @@ header {
                 position: absolute;
                 height: 100%;
                 width: 100%;
-                clip-path: circle(88.8% at 91% 150%);
+                // clip-path: circle(88.8% at 91% 150%);
+                clip-path: circle(77% at 91% 150%);
+
                 background-size: cover;
                 background-position: 2% 20%;
             } 
@@ -194,7 +205,7 @@ header {
         }
     }
 }
-/* end navbar */
+/* end slider */
 
 /* start about */
 .about {

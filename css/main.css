@@ -147,28 +147,37 @@ header .social-media img.w-app:hover {
 }
 
 /* end header */
-/* start navbar */
-.menu {
+/* start nav */
+.navbar {
+  direction: rtl;
+  background-image: url("../imgs/nav1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* end nav */
+/* start slider */
+.slider {
   direction: rtl;
   border: 2px solid #171c1e;
   border-bottom: none;
   border-top: none;
 }
 
-.menu .carousel .carousel-inner .overlay {
+.slider .carousel .carousel-inner .overlay {
   background-color: red;
   background-image: url("../imgs/خلفية.jpg");
   z-index: 12;
   position: absolute;
   height: 100%;
   width: 100%;
-  -webkit-clip-path: circle(88.8% at 91% 150%);
-          clip-path: circle(88.8% at 91% 150%);
+  -webkit-clip-path: circle(77% at 91% 150%);
+          clip-path: circle(77% at 91% 150%);
   background-size: cover;
   background-position: 2% 20%;
 }
 
-.menu .carousel .carousel-inner .carousel-item .carousel-caption {
+.slider .carousel .carousel-inner .carousel-item .carousel-caption {
   /* background-color: rebeccapurple; */
   position: unset;
   text-align: center;
@@ -186,12 +195,12 @@ header .social-media img.w-app:hover {
   z-index: 12;
 }
 
-.menu .carousel .carousel-inner .carousel-item .carousel-img {
+.slider .carousel .carousel-inner .carousel-item .carousel-img {
   margin: auto;
   margin-left: -15px;
 }
 
-/* end navbar */
+/* end slider */
 /* start about */
 .about {
   direction: rtl;
