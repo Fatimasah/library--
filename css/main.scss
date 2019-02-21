@@ -159,6 +159,19 @@ header {
     background-image: url('../imgs/nav1.png');
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 10px 30px;
+    .navbar-nav {
+        .nav-item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .nav-link {
+                border-left: 3px solid;
+                padding: 0;
+                padding: 0 10px;
+            }
+        }
+    }
 }
 /* end nav */
 
