@@ -3,6 +3,7 @@ $blueColor: #0088a4 ;
 
 
 $mobile: "(max-width: 767px)";
+$minSmall: "(min-width: 768px)";
 $miny: "(max-width: 575px)";
 $minMedium: "(min-width: 992px)";
 $medium: "(min-width: 992px) and (max-width: 1199px)";
@@ -35,6 +36,11 @@ $minlarge: "(min-width: 1200px)";
     background-image: url('../imgs/line.png');
     background-size: contain;
     background-repeat: no-repeat;
+    h3 {
+        font-family: 'bukra';
+        font-size: 18px;
+        font-weight: bold;
+    }
 }
 
 .col-mobile-full {
@@ -59,8 +65,8 @@ $minlarge: "(min-width: 1200px)";
     src: url("../fonts/ariali.ttf");
 }
 @font-face {
-    font-family: "ARIALN";
-    src: url("../fonts/ARIALN.ttf");
+    font-family: "bukra";
+    src: url("../fonts/29lt-bukra-bold_0.ttf");
 }
 @font-face {
     font-family: "ARIALNB_2";
@@ -114,26 +120,27 @@ a {
 
 .sticky {
     background-color: $grayColor;
-    @extend %trans;
     border-bottom: 1px solid $blueColor;
+    @extend %trans;
 }
 .sticky-logo {
     border-bottom: 1px solid $grayColor;
     @extend %trans;
+    @media #{$maxSmall} {
+        background: linear-gradient(to top, rgba(255, 255, 255, 0) -34%, #191d20 50%, #191d20 100%);
+    }
 
 }
 /* start header */
 // header {
 //     padding: 40px 0;
     .social-media {
-        
-    position: fixed;
-    z-index: 3;
-    top: 40%;
-    padding-left: 5px;
-    border-left: 5px solid $blueColor;
+        position: fixed;
+        z-index: 3;
+        top: 13.5%;
+        padding-left: 5px;
+        border-left: 5px solid $blueColor;
         ul {
-
             li {
                 img{
             width: 50px;
@@ -206,6 +213,15 @@ a {
     .logo {
         background-color: $blueColor;
         height: 100%;
+        padding-bottom: 21px;
+        padding-top: 21px;
+        @extend %trans;
+        .navbar-brand {
+            font-family: 'bokra';
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
         // padding: 10px 20px;
         @media #{$maxSmall} {
             justify-content: center;
@@ -213,6 +229,9 @@ a {
             flex-direction: row;
             flex-basis: 100%;
         }
+    }
+    .navbar-collapse {
+        @extend %trans;
     }
     .navbar-nav {
         @media #{$maxSmall} {
@@ -224,18 +243,31 @@ a {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            height: 82px;
             @media #{$maxSmall} {
                 margin-bottom: 15px;
+                height: auto;
             }
             .nav-link {
                 border-left: 3px solid;
                 padding: 0;
-                padding: 0 10px;
+                padding: 0 30px;
                 color: #ffffff;
+                padding-bottom: 5px;
+                padding-top: 5px;           
+                font-family: 'bukra';
+                font-size: 12px;
+                @extend %trans;
+        
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
                 @extend %trans;
                 &:hover {
+                    height: 100%;
                     @extend %trans;
-                    padding: 5px 10px;
+                    padding: 5px 30px;
                     color: $blueColor;
                     background-color: #ffffff2b;;
                 }
@@ -266,12 +298,17 @@ a {
     justify-content: center;
 }
 #myCarousel h4{
-	font-size:50px;
+	font-size:40px;
 	margin-bottom:15px;
 	color:#FFF;
-	line-height:100%;
-	letter-spacing:0.5px;
-	font-weight:600;
+	line-height:1.5;
+	letter-spacing:0;
+    font-weight:600;
+    font-family: 'bukra';
+    @media #{$mobile} {
+        font-size: 20px;
+        margin-top: 20px;
+    }
 }
 #myCarousel p{
 	font-size:18px;
@@ -284,7 +321,20 @@ a {
 #myCarousel .carousel-item h4{-webkit-animation-name:fadeInLeft; animation-name:fadeInLeft;} 
 #myCarousel .carousel-item p{-webkit-animation-name:slideInRight; animation-name:slideInRight;} 
 #myCarousel .carousel-item a{-webkit-animation-name:fadeInUp; animation-name:fadeInUp;}
-#myCarousel .carousel-item .mask img{-webkit-animation-name:slideInRight; animation-name:slideInRight; display:block; height:auto; max-width:100%;}
+#myCarousel .carousel-item .mask img{-webkit-animation-name:slideInRight; animation-name:slideInRight; display:block; height:auto; max-width:100%;
+@media #{$mobile} {
+    width: 60%;
+}
+}
+#myCarousel .carousel-item .mask .extra {
+    @media #{$minSmall} {
+        width: 60%;
+    }
+    @media #{$mobile} {
+        width: 35%;
+    }
+}
+
 #myCarousel h4, #myCarousel p, #myCarousel a, #myCarousel .carousel-item .mask img{-webkit-animation-duration: 1s;
     animation-duration: 1.2s;
     -webkit-animation-fill-mode: both;
@@ -456,6 +506,10 @@ a {
     direction: rtl;
     padding-top: 70px;
     padding-bottom: 100px;
+    p {
+        font-family: 'bukra';
+        font-size: 14px;
+    }
 
 }
 /* end about */
@@ -469,6 +523,8 @@ a {
                 // width: 40%
                 width: fit-content;
                 border-bottom: 5px dashed red;
+                font-family: 'bukra';
+                font-size: 16px;
             }
         }
         
@@ -520,11 +576,38 @@ a {
 
 /* start contact-us*/
 .contact-us {
-    background-color: #4d9cc9;
+    background-color: $blueColor;
     border-bottom: 5px solid #ffffff;
     padding: 20px 0;
-    padding-top: 50px;
+    padding-top: 100px;
     background-image: url('../imgs/bac-black.png');
+    .keep-touch {
+        h6 {
+            font-family: 'bukra';
+            font-size: 14px;
+            color: #ffffff;
+        }
+        form {
+            input, textarea, button {
+                font-family: 'bukra';
+                font-size: 12px;
+            }
+            textarea {
+                padding: 10px;
+            }
+        }
+        @media #{$mobile} {
+            margin-bottom: 45px;
+        }
+
+        @media #{$small} {
+            max-width: 60%;
+            flex-basis: 60%;
+        }
+        @media #{$minMedium} {
+            // right: 5%;
+        }
+    }
     .share {
         display: flex;
         flex-direction: column-reverse; 
@@ -554,45 +637,62 @@ a {
             max-width: 30%;
             flex-basis: 30%;
         }
-    }
-    .keep-touch {
-        @media #{$small} {
-            max-width: 60%;
-            flex-basis: 60%;
-        }
-        @media #{$minMedium} {
-            right: -20%;
-        }
-    }
+   
     .contact-info {
         h6 {
             font-family: 'arialbd';
             font-size: 25px;
             font-weight: bold;
+            color: #ffffff;
         }
 
         .reserve-contact {
             width: fit-content;
             margin: auto;
+            font-family: 'arialbd';
+            font-size: 16px;
+            padding: 2% 2%;
             li {
                 // height: 50px;
                 margin-bottom: 5px;
-                font-family: 'bokra';
+                font-family: 'arialbd';
+                font-size: 18px;
+                font-weight: bold;
+                color: #ffffff;
                 img {
                     width: 22px;
                     margin-right: 5px;
                 }
             }
         }
+        h5 {
+            font-family: 'arialbd';
+            font-size: 19px;
+            font-weight: bold;
+            color: #000000;
+            }
         .time-hrs {
             background-color: #ffffff;
             border: 1px solid #000000;
             color: #000000;
+            width: 100%;
+            @media #{$mobile} {
+                width: 70%;
+            }
+            .am, .pm {
+                width: 50%;
+                font-family: 'arialbd';
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .am {
+                border-left: 1px solid $grayColor;
+            }
             .right-hr, .left-hr {
                 color: red;
             }
             .left-hr {
-                border-right: 1px solid black;
+                // border-right: 1px solid black;
             }
         }
         .social-black {
@@ -633,7 +733,10 @@ a {
             margin-bottom: 30px;  
         }
     }
+}
+
     form {
+        
         .form-group {
             margin-bottom: 10px;
         }
@@ -679,6 +782,8 @@ footer {
             right: -40px;
             font-size: 14px;
             color:white;
+            font-family: 'bukra';
+            font-size: 12px;
         }
         img {
             width: 120px;
