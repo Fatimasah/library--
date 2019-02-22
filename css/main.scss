@@ -1,5 +1,5 @@
-$grayColor: #171c1e;
-$blueColor: #4d9cc9;
+$grayColor: #191d20 ;
+$blueColor: #0088a4 ;
 
 
 $mobile: "(max-width: 767px)";
@@ -17,6 +17,12 @@ $minlarge: "(min-width: 1200px)";
     -o-transform: rotate(135deg);
     -ms-transform: rotate(135deg);
     transform: rotate(135deg);
+}
+%trans {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .block-sec {
     direction: rtl;
@@ -84,14 +90,16 @@ $minlarge: "(min-width: 1200px)";
     font-family: "MATEEN";
     src: url("../fonts/MATEEN.ttf");
 }
-
+html {
+    scroll-behavior: smooth;
+}
 * {
     box-sizing: border-box;
 }
 a {
     outline: none;
     text-decoration: none;
-    color: black;
+    color: $grayColor;
 
 }
 .col-mobile-full {
@@ -104,18 +112,40 @@ a {
     justify-content: space-around;
 }
 
+.sticky {
+    background-color: $grayColor;
+    @extend %trans;
+    border-bottom: 1px solid $blueColor;
+}
+.sticky-logo {
+    border-bottom: 1px solid $grayColor;
+    @extend %trans;
+
+}
 /* start header */
-header {
-    padding: 40px 0;
+// header {
+//     padding: 40px 0;
     .social-media {
-        img{
+        
+    position: fixed;
+    z-index: 3;
+    top: 40%;
+    padding-left: 5px;
+    border-left: 5px solid $blueColor;
+        ul {
+
+            li {
+                img{
             width: 50px;
             margin-right: 10px;
+            @extend %trans;
             @media #{$mobile} {
                 width: 25px;
             }
             &:hover {
                 border-radius: 50%;
+                margin-left: 10px;
+                @extend %trans;
             }
             &.snap {
                 &:hover {
@@ -148,27 +178,73 @@ header {
                 }
             }
         }
+            }
+        }
+        
     }
     
-}
+// }
 /* end header */
 
 /* start nav */
 .navbar{
     direction: rtl;
-    background-image: url('../imgs/nav1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 10px 30px;
+    padding: 0;
+    // background-color: $grayColor;
+    @media #{$maxSmall} {
+        background-color: unset;
+    }
+    .navbar-toggler {
+        background-color: $blueColor;
+        margin-top: -75px;
+        margin-right: 5%;
+    }
+    .navbar-light .navbar-toggler {
+        border-color: $grayColor !important;
+
+    }
+    .logo {
+        background-color: $blueColor;
+        height: 100%;
+        // padding: 10px 20px;
+        @media #{$maxSmall} {
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            flex-basis: 100%;
+        }
+    }
     .navbar-nav {
+        @media #{$maxSmall} {
+            background-color: $grayColor;
+            text-align: right;
+
+        }
         .nav-item{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            @media #{$maxSmall} {
+                margin-bottom: 15px;
+            }
             .nav-link {
                 border-left: 3px solid;
                 padding: 0;
                 padding: 0 10px;
+                color: #ffffff;
+                @extend %trans;
+                &:hover {
+                    @extend %trans;
+                    padding: 5px 10px;
+                    color: $blueColor;
+                    background-color: #ffffff2b;;
+                }
+                @media #{$maxSmall} {
+                    border-right: 3px solid;
+                    border-left: none;
+                    padding: 5px;
+                }
+                
             }
         }
     }
@@ -176,48 +252,203 @@ header {
 /* end nav */
 
 /* start slider */
-.slider {
-    direction: rtl;
-    border: 2px solid $grayColor;
-    border-bottom: none; 
-    border-top: none; 
-    .carousel {
-        .carousel-inner {
-            .overlay {
-                background-color: red;
-                background-image: url('../imgs/خلفية.jpg');
-                z-index: 12;
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                // clip-path: circle(88.8% at 91% 150%);
-                clip-path: circle(77% at 91% 150%);
 
-                background-size: cover;
-                background-position: 2% 20%;
-            } 
-            .carousel-item {
-                .carousel-caption{                
-                    /* background-color: rebeccapurple; */
-                    position: unset;
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-                    margin: auto;
-                    z-index: 12;
-                }
-                .lin {
-                    
-                }
-                .carousel-img {
-                    margin: auto;
-                    margin-left: -15px;
-                }
-            }
-        }
-    }
+#myCarousel .carousel-item .mask {
+    position: absolute;
+    top: 0;
+	left:0;
+	height:100%;
+    width: 100%;
+    background-attachment: fixed;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+#myCarousel h4{
+	font-size:50px;
+	margin-bottom:15px;
+	color:#FFF;
+	line-height:100%;
+	letter-spacing:0.5px;
+	font-weight:600;
+}
+#myCarousel p{
+	font-size:18px;
+	margin-bottom:15px;
+	color:#d5d5d5;
+}
+#myCarousel .carousel-item a{background:#F47735; font-size:14px; color:#FFF; padding:13px 32px; display:inline-block; }
+#myCarousel .carousel-item a:hover{background:#394fa2; text-decoration:none;  }
+
+#myCarousel .carousel-item h4{-webkit-animation-name:fadeInLeft; animation-name:fadeInLeft;} 
+#myCarousel .carousel-item p{-webkit-animation-name:slideInRight; animation-name:slideInRight;} 
+#myCarousel .carousel-item a{-webkit-animation-name:fadeInUp; animation-name:fadeInUp;}
+#myCarousel .carousel-item .mask img{-webkit-animation-name:slideInRight; animation-name:slideInRight; display:block; height:auto; max-width:100%;}
+#myCarousel h4, #myCarousel p, #myCarousel a, #myCarousel .carousel-item .mask img{-webkit-animation-duration: 1s;
+    animation-duration: 1.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+#myCarousel .container {max-width: 1430px;  }
+#myCarousel .carousel-item{height:100%; min-height:550px; }
+#myCarousel{position:relative; z-index:1; background:url(https://i.imgur.com/6axE29k.jpg) center center no-repeat; background-size:cover; }
+
+.carousel-control-next, .carousel-control-prev{height:40px; width:40px; padding:12px; top:50%; bottom:auto; transform:translateY(-50%); background-color: #f47735; }
+
+
+.carousel-item {
+    position: relative;
+    display: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    transition: -webkit-transform .6s ease;
+    transition: transform .6s ease;
+    transition: transform .6s ease,-webkit-transform .6s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+.carousel-fade .carousel-item {
+	opacity: 0;
+	-webkit-transition-duration: .6s;
+	transition-duration: .6s;
+	-webkit-transition-property: opacity;
+	transition-property: opacity
+}
+.carousel-fade .carousel-item-next.carousel-item-left, .carousel-fade .carousel-item-prev.carousel-item-right, .carousel-fade .carousel-item.active {
+	opacity: 1
+}
+.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-right.active {
+	opacity: 0
+}
+.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item-prev.active, .carousel-fade .carousel-item.active {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0)
+}
+@supports (transform-style:preserve-3d) {
+	.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item-prev.active, .carousel-fade .carousel-item.active {
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0)
+	}
+}
+.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item-prev.active, .carousel-fade .carousel-item.active {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.carousel-control-next, .carousel-control-prev {
+    background-color: $grayColor;
+}
+
+#myCarousel {
+    direction: rtl;
+    background-image: none !important;
+    background-color: $blueColor !important;
+}
+
+
+ 
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
 /* end slider */
 
 /* start about */
@@ -293,7 +524,6 @@ header {
     border-bottom: 5px solid #ffffff;
     padding: 20px 0;
     padding-top: 50px;
-    direction:ltr;
     background-image: url('../imgs/bac-black.png');
     .share {
         display: flex;

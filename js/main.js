@@ -3,12 +3,17 @@ $("document").ready(function($){
 
 // navbar change background
     var nav = $('#mainnav');
-    $(window).height(function () {
-        if ($(this).height() > 0) {
+    var logo = $('.logo');
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
             nav.addClass("sticky");
+            logo.addClass("sticky-logo");
         } else {
             nav.removeClass("sticky");
+            logo.removeClass("sticky-logo");
+
         }
+
         });
    
     // scroll top 
@@ -30,5 +35,7 @@ $("document").ready(function($){
  }); //end ready function
 
 
-
+$('#myCarousel').carousel({
+    interval: 3000,
+ })
 

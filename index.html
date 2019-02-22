@@ -8,84 +8,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
 </head>
 
 <body>
     <!-- start header -->
-    <header class="text-center">
-        <div class="container">
-            <div class="social-media">
-                <a href=""><img src="imgs/snap.png" class="snap" alt=""></a>
-                <a href=""><img src="imgs/youtube.png" class="y-tub" alt=""></a>
-                <a href=""><img src="imgs/instegram.png" class="inst" alt=""></a>
-                <a href=""><img src="imgs/twitter.png" class="tw" alt=""></a>
-                <a href=""><img src="imgs/facebook.png" class="fb" alt=""></a>
-                <a href=""><img src="imgs/whatsapp.png" class="w-app" alt=""></a>
-            </div>
-        </div>
-    </header>
+    <!-- <header class="text-center">
+        <div class="container"> -->
+    <div class="social-media">
+        <ul class="list-unstyled">
+            <li> <a href=""><img src="imgs/snap.png" class="snap" alt=""></a>
+            </li>
+            <li> <a href=""><img src="imgs/youtube.png" class="y-tub" alt=""></a>
+            </li>
+            <li> <a href=""><img src="imgs/instegram.png" class="inst" alt=""></a>
+            </li>
+            <li> <a href=""><img src="imgs/twitter.png" class="tw" alt=""></a>
+            </li>
+            <li> <a href=""><img src="imgs/facebook.png" class="fb" alt=""></a>
+            </li>
+            <li> <a href=""><img src="imgs/whatsapp.png" class="w-app" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <!-- </div>
+    </header> -->
     <!-- end header -->
-
+<!-- <div class="margin p-5"></div> -->
 
     <!-- start navbar -->
-    <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#">مشروع المكتبات الخيري</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mb-2 ">
+        <div class="logo px-5 py-3">
+            <a class="navbar-brand" href="#">مشروع المكتبات الخيري</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav"
+            aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse py-2" id="mainnav">
+            <ul class="navbar-nav mr-auto pl-5 py-3">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item "> <a href="#about" class="nav-link active">عن المشروع</span></a> </li>
+                <li class="nav-item"> <a href="#about" class="nav-link active">عن المشروع</span></a> </li>
                 <li class="nav-item"> <a href="#services" class="nav-link">ثمار تبرعاتكم</a> </li>
                 <li class="nav-item"> <a href="#portfolio" class="nav-link">نستقبل تبرعاتكم</a> </li>
                 <li class="nav-item"> <a href="#contact-us" class="nav-link">اتصل بنا</a> </li>
-
-               
+            </ul>
         </div>
     </nav>
     <!-- end navbar -->
 
-
     <!-- start slider -->
-    <div class="slider">
-        <div id="main-slider" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
-                <li data-target="#main-slider" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="overlay">
-                    <div class="lin  col-6">
-                        <!-- <img src="../imgs/caption2.png" alt=""> -->
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <div class="row m-0 p-0">
-                        <div class="carousel-caption">
-                            <h1>First slide label</h1>
-                        </div>
-                        <div class="carousel-img col-6">
-                            <img src="imgs/01.jpg" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                </div>
 
+    <div id="myCarousel" class="carousel slide carousel-fade px-5 mb-1" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="mask flex-center">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-7 col-12 order-md-1 order-2 text-md-right text-center">
+                                <h4>ساهم <br>&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp; في تأسيس مكتبة<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ولو
+                                    بكتاب واحد</h4>
+                            </div>
+                            <div class="col-md-5 col-12 order-md-2 order-1">
+                                <img src="imgs/open-book.png" class="mx-auto" alt="slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="carousel-item ">
+                <div class="mask flex-center">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-7 col-12 order-md-1 order-2 text-md-right text-center">
+                                <h4>خفف معاناتهم في <br>
+                                    توفير الكتب لهم</h4>
+                            </div>
+                            <div class="col-md-5 col-12 order-md-2 order-1">
+                                <img src="imgs/pexels-photo-256559.jpeg" class="mx-auto" alt="slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item ">
+                <div class="mask flex-center">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-7 col-12 order-md-1 order-2 text-md-right text-center">
+                                <h4>ما فاض عندك....<br>
+                                    قد يسد حاجة غيرك</h4>
+                            </div>
+                            <div class="col-md-5 col-12 order-md-2 order-1">
+                                <img src="imgs/book-png-15363.png" class="mx-auto" alt="slide" width="70%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span
+                class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span
+                class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
     </div>
+    <!--slide end-->
     <!-- end slider -->
 
-
-
     <!-- start about -->
-    <div class="about  block-sec text-center text-lg-right">
+    <div class="about block-sec text-center text-lg-right" id="about">
         <h3 class="text-center text-lg-right px-5 mb-5">مشروع المكتبات الخيري</h3>
         <div class="informtion px-5">
             <p>بدأ عمله في عام<br>
@@ -96,7 +136,7 @@
     <!-- start about -->
 
     <!-- start الانجازات -->
-    <div class="services block-sec">
+    <div class="services block-sec" id="services">
         <h3 class="text-center text-lg-right px-5 mb-5">تم بفضل الله ثم بفضل تبرعاتكم للمشروع إنجاز الآتي:</h3>
         <div class="container">
             <div class="row books-row services-row text-center py-5">
@@ -122,7 +162,7 @@
     <!-- end الانجازات -->
 
     <!-- start نستقبل تبرعاتكم العينية من الكتبي  -->
-    <div class="books block-sec">
+    <div class="books block-sec" id="portfolio">
         <h3 class="text-center text-lg-right px-5 mb-4">نستقبل تبرعاتكم العينية من الكتب:</h3>
         <div class="container">
             <div class="row books-row text-center">
@@ -144,14 +184,28 @@
     <!-- end نستقبل تبرعاتكم العينية من الكتبي  -->
 
     <!-- start contact-us -->
-    <div class="contact-us block-sec" id="contact-us">
+    <!-- <div class="contact-us block-sec" id="contact-us" id="contact-us"">
         <div class="container-fluid">
             <div class="row ">
-                <div class="col-md-1 share">
-                    <div class="share-it">
-                        <a href=""><img src="imgs/shareit-white.png" alt=""></a>
-                    </div>
+                <div class="col-md-5 col-mobile-full keep-touch">
+                    <h6 class="text-center">راسلنــــا</h6>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control text-right" id="email" placeholder="الاسم">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control text-right" id="text" placeholder="الايميل">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" class="text-right" rows="7" placeholder="..نص الرسالة"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">أرسل رسالتك</button>
+                    </form>
                 </div>
+
+
                 <div class="col-md-3 col-mobile-full reserve">
                     <div class="contact-info">
                         <h6 class="text-center">لحجــز موعــــد</h6>
@@ -180,26 +234,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-mobile-full keep-touch">
-                    <h6 class="text-center">راسلنــــا</h6>
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <input type="email" class="form-control text-right" id="email" placeholder="الاسم">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control text-right" id="text" placeholder="الايميل">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="" id="" class="text-right" rows="7" placeholder="..نص الرسالة"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">أرسل رسالتك</button>
-                    </form>
+                <div class="col-md-1 share">
+                    <div class="share-it">
+                        <a href=""><img src="imgs/shareit-white.png" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- end contact-us -->
 
     <!-- start footer -->
