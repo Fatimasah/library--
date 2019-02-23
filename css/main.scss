@@ -584,7 +584,7 @@ header {
     border-bottom: 5px solid #ffffff;
     padding: 20px 0;
     padding-top: 100px;
-    background-image: url('../imgs/bac-black.png');
+    background-image: url('../imgs/contact-bkg.png');
     .keep-touch {
         h6 {
             font-family: 'bukra';
@@ -827,6 +827,10 @@ footer {
     z-index: 99999;
     display: none; 
     @extend %trans;
+    @media #{$mobile} {
+        width: 280px;
+        height: 240px;
+    }
 }
     .contact-nav {
         background-color: #2e8c7d;
@@ -835,6 +839,9 @@ footer {
         border-radius: 20px 20px 0 0;
         color: rgb(151, 198, 190);
         font-size: 20px;
+        @media #{$mobile} {
+           font-size: 15px;
+        }
     }
     .contain {
         padding-left: 20px;
@@ -850,6 +857,9 @@ footer {
         text-align: right;
         line-height: 25px;
         padding-top: 6px;
+        @media #{$mobile} {
+            font-size: 10px;
+        }
         p {
             font-family: 'bukra';
             a {
