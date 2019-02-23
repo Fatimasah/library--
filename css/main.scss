@@ -132,16 +132,17 @@ a {
 
 }
 /* start header */
-// header {
-//     padding: 40px 0;
+header {
+    // padding: 40px 0;
     .social-media {
-        position: fixed;
-        z-index: 3;
-        top: 13.5%;
-        padding-left: 5px;
-        border-left: 5px solid $blueColor;
+        // position: fixed;
+        // z-index: 3;
+        // top: 13.5%;
+        // padding-left: 5px;
+        // border-left: 5px solid $blueColor;
         ul {
             li {
+                float: left;
                 img{
             width: 50px;
             margin-right: 10px;
@@ -151,7 +152,7 @@ a {
             }
             &:hover {
                 border-radius: 50%;
-                margin-left: 10px;
+                // margin-left: 10px;
                 @extend %trans;
             }
             &.snap {
@@ -190,13 +191,16 @@ a {
         
     }
     
-// }
+}
 /* end header */
 
 /* start nav */
 .navbar{
     direction: rtl;
     padding: 0;
+    background-color: $grayColor;
+    border-bottom: 1px solid $blueColor;
+    width: 100%;
     // background-color: $grayColor;
     @media #{$maxSmall} {
         background-color: unset;
@@ -807,3 +811,89 @@ footer {
 }
 
 /* end footer */
+
+
+
+.fixed-contact {
+    background: url('../imgs/whats-background.png') no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 30px;
+    bottom: 25px;
+    right: auto;
+    width: 400px;
+    height: 280px;
+    border-radius: 20px;
+    z-index: 99999;
+    display: none; 
+    @extend %trans;
+}
+    .contact-nav {
+        background-color: #2e8c7d;
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px 20px 0 0;
+        color: rgb(151, 198, 190);
+        font-size: 20px;
+    }
+    .contain {
+        padding-left: 20px;
+        padding-right: 30px;
+        margin-top: 30px;
+        direction: ltr;
+        background-color: #fff;
+        border-radius: 32px;
+        margin-right: 15px;
+        margin-left: 15px;
+        height: 70px;
+        font-size: 15px;
+        text-align: right;
+        line-height: 25px;
+        padding-top: 6px;
+        p {
+            font-family: 'bukra';
+            a {
+                color: $blueColor;
+            }
+        }
+    }
+    .contact-nav .close {
+        background-color: #25d366;
+        color: #fff;
+        opacity: 1;
+        padding: 5px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        text-align: center;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+    }
+    .whats-fixed {
+    
+    position: fixed;
+    left: 40px;
+    bottom: 35px;
+    background-color: #25d366;
+    z-index: 99999999;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.whats-fixed:hover {
+    background-color: #2e8c7d !important;
+}
+.whats-fixed i {
+    font-size: 40px;
+    color: #fff;
+}

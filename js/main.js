@@ -16,6 +16,13 @@ $("document").ready(function($){
 
         });
 
+        $(".whats-fixed").click(function(){
+            $(".fixed-contact").css("display", "block");
+          });
+          $(".close").click(function(){
+            $(".fixed-contact").css("display", "none");
+          });
+        
  }); //end ready function
 
 
