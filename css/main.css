@@ -90,6 +90,13 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  /* added */
+}
+
+body {
+  height: 100%;
+  /* added */
 }
 
 * {
@@ -221,6 +228,13 @@ a {
   color: #ffffff;
 }
 
+@media (max-width: 767px) {
+  .navbar .logo .navbar-brand {
+    /* added */
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 991px) {
   .navbar .logo {
     -webkit-box-pack: center;
@@ -235,6 +249,13 @@ a {
             flex-direction: row;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar .navbar-nav {
+    /* added */
+    padding-right: 0;
   }
 }
 
@@ -313,6 +334,13 @@ a {
   }
 }
 
+@media (max-width: 575px) {
+  .navbar .navbar-nav .nav-item .nav-link:hover {
+    /* added */
+    padding: 5px 2px;
+  }
+}
+
 @media (max-width: 991px) {
   .navbar .navbar-nav .nav-item .nav-link {
     border-right: 3px solid;
@@ -328,12 +356,26 @@ a {
   }
 }
 
+@media (max-width: 575px) {
+  .navbar .navbar-nav .nav-item .nav-link {
+    /* added */
+    padding: 5px 2px;
+  }
+}
+
 /* end nav */
 /* start slider */
 #myCarousel {
   background-color: #0088a4;
   padding: 81px 0;
   direction: rtl;
+}
+
+@media (min-width: 1200px) {
+  #myCarousel {
+    /* added */
+    height: 100%;
+  }
 }
 
 #myCarousel .carousel-inner .carousel-item .carousel-caption {

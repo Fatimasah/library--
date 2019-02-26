@@ -98,6 +98,10 @@ $minlarge: "(min-width: 1200px)";
 }
 html {
     scroll-behavior: smooth;
+    height: 100%; /* added */
+}
+body {
+    height: 100%; /* added */
 }
 * {
     box-sizing: border-box;
@@ -208,6 +212,9 @@ a {
             font-size: 20px;
             font-weight: bold;
             color: #ffffff;
+            @media #{$mobile} { /* added */
+                font-size: 15px;
+            }
         }
         @media #{$maxSmall} {
             justify-content: center;
@@ -220,6 +227,9 @@ a {
         @extend %trans;
     }
     .navbar-nav {
+        @media #{$miny} { /* added */
+            padding-right: 0;
+        }
         @media #{$maxSmall} {
             background-color: $grayColor;
             text-align: right;
@@ -252,15 +262,20 @@ a {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                
                 &:hover {
                     height: 100%;
                     @extend %trans;
                     padding: 5px 30px;
                     color: $blueColor;
                     background-color: #ffffff2b;
+                    
                     @media #{$mobile} {
                         font-size: 10px;
                         padding: 5px 10px; 
+                    }
+                    @media #{$miny} { /* added */
+                        padding: 5px 2px;
                     }
                 }
                 @media #{$maxSmall} {
@@ -271,6 +286,9 @@ a {
                 @media #{$mobile} {
                     font-size: 10px;
                     padding: 5px 10px;       
+                }
+                @media #{$miny} { /* added */
+                    padding: 5px 2px;
                 }
             }
         }
@@ -283,6 +301,10 @@ a {
     background-color: $blueColor;
     padding: 81px 0;
     direction: rtl;
+    @media #{$minlarge} { /* added */
+        height: 100%; 
+    }
+   
     .carousel-inner {
         .carousel-item {
             .carousel-caption {
